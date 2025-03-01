@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamaluddin Khan - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header class="header-background">
+        <nav>
+            <a href="#" class="logo">Jamaluddin Khan</a>
+            <button class="toggle-btn" onclick="toggleNav()">☰</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <img src="./Images/jammy.jpg" alt="Profile Photo of Jamaluddin Khan" class="animated-image">
+            <h1>Hello, I'm JAMALUDDIN KHAN</h1>
+            <p>| FULL STACK WEB DEVELOPER |</p>
+        </div>
+    </header>
+    <main>
+        <section id="home">
+            <div class="home-container">
+                <div class="home-box">
+                    <div class="home-content">
+                        <h2>"Welcome to my digital playground!"</h2>
+                        <p class="intro-text">I'm a passionate Full Stack Web Developer with expertise in building
+                            modern, responsive, and user-friendly web applications.</p>
+                        <p class="intro-text">I specialize in the <span class="highlight">MERN stack</span> (MongoDB,
+                            Express.js, React.js, Node.js) and have hands-on experience in UI/UX design, backend
+                            development, and database management.</p>
+                        <div class="cta-buttons">
+                            <a href="projects.html" class="cta-button">View Projects</a>
+                            <a href="contact.html" class="cta-button">Contact Me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function toggleNav() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamaluddin Khan - Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header-background">
+        <nav>
+            <a href="index.html" class="logo">Jamaluddin Khan</a>
+            <button class="toggle-btn" onclick="toggleNav()">☰</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <h2>~ Ping me anytime ~</h2> 
+            <br>
+            <button class="td-btn" onclick="window.location.href='mailto:iamjamaluddink@gmail.com'">Send me a message!</button> 
+        </div>
+    </header>
+
+    <script>
+        function toggleNav() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

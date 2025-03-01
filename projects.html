@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamaluddin Khan - Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Jamaluddin Khan</a>
+            <button class="toggle-btn" onclick="toggleNav()">☰</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Projects Section -->
+        <section id="projects">
+            <!-- Section Title -->
+            <h2>~ My Work ~</h2>
+
+            <!-- Project Introduction -->
+            <p class="project-intro ">
+                "Here are some of my projects from internships and academics, showcasing my passion for problem-solving and innovation."
+            </p>
+
+            <!-- Project Cards -->
+            <div class="project-cards">
+                <!-- All About Food -->
+                <div class="project" data-details="all-about-food">
+                    <h3>All About Food</h3>
+                    <p class="project-tech">React.js | Tailwind CSS | Figma</p>
+                    <div class="project-details"></div> <!-- Placeholder for description -->
+                </div>
+
+                <!-- Blog Web App -->
+                <div class="project" data-details="blog-web-app">
+                    <h3>Future’s Scribe</h3>
+                    <p class="project-tech">React.js | Node.js | MongoDB</p>
+                    <div class="project-details"></div> <!-- Placeholder for description -->
+                </div>
+
+                <!-- Video Streaming App -->
+                <div class="project" data-details="video-streaming-app">
+                    <h3>JJTUBE</h3>
+                    <p class="project-tech">React.js | Node.js | MySQL</p>
+                    <div class="project-details"></div> <!-- Placeholder for description -->
+                </div>
+
+                <!-- Carpooling Java App -->
+                <div class="project" data-details="carpooling-java-app">
+                    <h3>Carpooling Java App</h3>
+                    <p class="project-tech">Java | MySQL</p>
+                    <div class="project-details"></div> <!-- Placeholder for description -->
+                </div>
+
+                <!-- Maxcool Website -->
+                <div class="project" data-details="maxcool-website">
+                    <h3>Maxcool Website</h3>
+                    <p class="project-tech">HTML | CSS | JavaScript</p>
+                    <div class="project-details"></div> <!-- Placeholder for description -->
+                </div>
+
+                <!-- Personal Portfolio -->
+                <div class="project" data-details="personal-portfolio">
+                    <h3>Personal Portfolio</h3>
+                    <p class="project-tech">HTML | CSS | JavaScript</p>
+                    <div class="project-details"></div> <!-- Placeholder for description -->
+                </div>
+            </div>
+            
+        </section>
+    </main>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Toggle Navigation Menu
+        function toggleNav() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Add Interactivity to Project Cards
+        const projects = document.querySelectorAll('.project');
+
+        projects.forEach(project => {
+            project.addEventListener('click', () => {
+                // Remove any existing descriptions
+                document.querySelectorAll('.project-details').forEach(details => {
+                    details.innerHTML = ''; // Clear previous descriptions
+                });
+
+                const details = project.getAttribute('data-details');
+                const descriptionContainer = project.querySelector('.project-details');
+                let description = '';
+
+                // Set description based on the clicked project
+                switch (details) {
+                    case 'all-about-food':
+                        description = "Designed and deployed a responsive web restaurant app using React.js and Tailwind CSS. Improved user engagement by 30% and reduced bounce rate by 25%.";
+                        break;
+                    case 'blog-web-app':
+                        description = "Built a MERN-based blogging platform with OTP-based email verification and an audio feature for long-form blogs. Improved accessibility by 30%.";
+                        break;
+                    case 'video-streaming-app':
+                        description = "Developed a video streaming platform with user authentication and payment gateway integration. Optimized for multi-device compatibility.";
+                        break;
+                    case 'carpooling-java-app':
+                        description = "Created a carpooling application using Java and MySQL to facilitate ride-sharing among users.";
+                        break;
+                    case 'maxcool-website':
+                        description = "Redesigned the Maxcool website, improving user engagement and ensuring 100% mobile compatibility.";
+                        break;
+                    case 'personal-portfolio':
+                        description = "Designed and developed a personal portfolio website to showcase my skills, projects, and professional journey.";
+                        break;
+                    default:
+                        description = "Select a project to view its details.";
+                }
+
+                // Insert the description below the clicked project
+                descriptionContainer.innerHTML = `<p class="description-text">${description}</p>`;
+
+                // Smooth scroll to the clicked project (optional)
+                project.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+
+</html>
